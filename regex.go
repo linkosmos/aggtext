@@ -23,4 +23,8 @@ var (
 	// whitespace (== [\t\n\v\f\r ])
 	// blank (== [\t ])
 	MultiWhitespace = regexp.MustCompile(`\s{2,}`)
+
+	// Matches period, question mark, exclamation mark
+	// with multiple whitespace or ending
+	Sentence = regexp.MustCompile(`(\.|!|\?)\s+|(\.|!|\?)$`)
 )
