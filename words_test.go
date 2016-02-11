@@ -12,7 +12,7 @@ var wordsTests = []struct {
 	expected []string
 }{
 	{
-		"It be distracted by the readable content of a page when looking at its layout.",
+		"It be distracted by the    readable content of a page when looking at its layout.",
 		[]string{
 			"It", "be", "distracted", "by", "the",
 			"readable", "content", "of", "a", "page", "when", "looking", "at", "its", "layout",
@@ -25,7 +25,9 @@ var wordsTests = []struct {
 		},
 	},
 	{
-		"It be distracted !by! the readable content ,of, a page 2292 when looking at its layout.",
+		`It be   distracted !by! 
+		the readable content ,of, a 
+				page 2292 when		looking at its layout.`,
 		[]string{
 			"It", "be", "distracted", "by", "the",
 			"readable", "content", "of", "a", "page", "2292",
