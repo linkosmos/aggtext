@@ -13,7 +13,7 @@ var (
 	// Matches unicode punctuation
 	// punctuation (== [!-/:-@[-`{-~])
 	// https://github.com/google/re2/blob/master/doc/syntax.txt#L214
-	Punctuation = regexp.MustCompile(`\p{P}`)
+	Punctuation = regexp.MustCompile(`\p{P}|\|`)
 
 	// Matches surrounding whitespace
 	// whitespace (== [\t\n\v\f\r ])
