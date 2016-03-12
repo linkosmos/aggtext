@@ -32,32 +32,6 @@ func TestPunctuation(t *testing.T) {
 	}
 }
 
-var surroundingWhitespapceTests = []struct {
-	input    string
-	expected string
-}{
-	{
-		" Su ",
-		"Su",
-	},
-	{
-		" S u ",
-		"S u",
-	},
-	{
-		"		Tab		",
-		"Tab",
-	},
-	{
-		`
-	
-		New Line
-		
-		`,
-		"New Line",
-	},
-}
-
 var multiWhitespaceTests = []struct {
 	input    string
 	expected string
@@ -83,14 +57,6 @@ var multiWhitespaceTests = []struct {
 func TestMultiWhitespace(t *testing.T) {
 	for _, test := range multiWhitespaceTests {
 		got := MultiWhitespace.ReplaceAllString(test.input, " ")
-
-		assert.Equal(t, test.expected, got)
-	}
-}
-
-func TestSurroundingWhitespapce(t *testing.T) {
-	for _, test := range surroundingWhitespapceTests {
-		got := SurroundingWhitespapce.ReplaceAllString(test.input, "")
 
 		assert.Equal(t, test.expected, got)
 	}
