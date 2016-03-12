@@ -19,3 +19,9 @@ PASS
 BenchmarkSentences-8	   10000	    155441 ns/op	   20905 B/op	     164 allocs/op
 BenchmarkWords-8    	  100000	     17855 ns/op	    1904 B/op	      32 allocs/op
 ok  	github.com/linkosmos/aggtext	3.543s
+
+Sat Mar 12 07:00:25 EET 2016
+PASS
+BenchmarkSentences-8	   10000	    151884 ns/op	   20385 B/op	     132 allocs/op
+BenchmarkWords-8    	  100000	     17798 ns/op	    1904 B/op	      32 allocs/op
+ok  	github.com/linkosmos/aggtext	3.501s

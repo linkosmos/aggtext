@@ -12,7 +12,7 @@ func isLower(sentence string) bool {
 }
 
 func isSentenceEnd(input ...rune) bool {
-	return len(input) == 3 && (input[1] == ' ') && unicode.IsUpper(input[2])
+	return len(input) == 2 && (input[0] == ' ') && unicode.IsUpper(input[1])
 }
 
 func fields(text string) (output []string) {
@@ -35,15 +35,13 @@ func fields(text string) (output []string) {
 			}
 
 			foundN = 1
-			buffer = append(buffer, rune)
 			continue
 		}
 
-		switch foundN {
-		case 1, 2:
+		if foundN == 1 || foundN == 2 {
 			foundN++
 			buffer = append(buffer, rune)
-		case 3:
+		} else if foundN == 3 {
 			if isSentenceEnd(buffer...) {
 				// -2 due to that we are at 2nd position and
 				// split should happen on space

@@ -104,23 +104,23 @@ var isSentenceEndTests = []struct {
 	expected bool
 }{
 	{
-		[]rune("! A"),
+		[]rune(" A"),
 		true,
 	},
 	{
-		[]rune("? Š"),
+		[]rune(" Š"),
 		true,
 	},
 	{
-		[]rune("?.Š"),
+		[]rune(".Š"),
 		false,
 	},
 	{
-		[]rune(". Š"),
+		[]rune(" Š"),
 		true,
 	},
 	{
-		[]rune("! !"),
+		[]rune(" !"),
 		false,
 	},
 	{
